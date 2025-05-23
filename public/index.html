@@ -21,8 +21,16 @@
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
         <div class="w-full bg-white dark:bg-dark opacity-70 lg:px-14">
             <div class="px-4 flex justify-between items-center relative">
-                <a href="#home" class="font-bold text-lg text-primary block py-5">Lets<span
-                        class="text-teal-800 italic mx-[1.5px]">go</span>bois</a>
+                <div class="flex items-center gap-1">
+                    <div class="block px-2 opacity-0">
+                        <span
+                            class="w-3.5 h-0.5 block origin-bottom-left -rotate-45 translate-y-[1.2px] bg-dark dark:bg-white"></span>
+                        <span
+                            class="w-3.5 h-0.5 block origin-top-left rotate-45 -translate-y-[1.2px] bg-dark dark:bg-white"></span>
+                    </div>
+                    <a href="#home" class="font-bold text-lg text-primary block py-5">Lets<span
+                            class="text-teal-800 italic mx-[1.5px]">go</span>bois</a>
+                </div>
                 <div class="flex items-center">
                     <button id="hamburger" name="hamburger" type="button"
                         class="block absolute right-4 cursor-pointer lg:hidden">
@@ -36,39 +44,36 @@
                         <ul class="flex flex-col lg:flex-row lg:gap-10 pl-5">
                             <li class="group">
                                 <a href="#home"
-                                    class="inline-block my-3 text-base text-dark group-hover:text-primary dark:text-white">Beranda</a>
+                                    class="inline-block py-3 text-base text-dark group-hover:text-primary dark:text-white">Beranda</a>
                             </li>
                             <li class="group">
                                 <a href="#about"
-                                    class="inline-block my-3 text-base text-dark group-hover:text-primary dark:text-white">Tentang
+                                    class="inline-block py-3 text-base text-dark group-hover:text-primary dark:text-white">Tentang
                                     Saya</a>
                             </li>
                             <li class="group">
                                 <a href="#portfolio"
-                                    class="inline-block my-3 text-base text-dark group-hover:text-primary dark:text-white">Portfolio</a>
+                                    class="inline-block py-3 text-base text-dark group-hover:text-primary dark:text-white">Portfolio</a>
                             </li>
-                            <li class="group">
+                            <!-- <li class="group">
                                 <a href="#blog"
-                                    class="inline-block my-3 text-base text-dark group-hover:text-primary dark:text-white">Blog</a>
-                            </li>
+                                    class="inline-block py-3 text-base text-dark group-hover:text-primary dark:text-white">Blog</a>
+                            </li> -->
                             <li class="group">
                                 <a href="#contact"
-                                    class="inline-block my-3 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
+                                    class="inline-block py-3 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
                             </li>
-                            <li class="flex items-center">
-                                <div class="flex items-center">
-                                    <span class="mr-2 text-sm text-secondary">Light</span>
-                                    <div id="dark-toggle"
-                                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-secondary px-0.5">
-                                        <div class="h-4 w-4 rounded-full bg-white transition duration-100 ease-in-out">
-                                        </div>
+                            <li class="flex mt-1 lg:mt-0 lg:items-center">
+                                <span class="mr-2 text-sm text-secondary">Light</span>
+                                <div id="dark-toggle"
+                                    class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-secondary px-0.5">
+                                    <div class="h-4 w-4 rounded-full bg-white transition duration-100 ease-in-out">
                                     </div>
-                                    <span class="ml-2 text-sm text-secondary">Dark</span>
                                 </div>
+                                <span class="ml-2 text-sm text-secondary">Dark</span>
                             </li>
                         </ul>
                     </nav>
-
                 </div>
             </div>
         </div>
@@ -76,7 +81,7 @@
     <!-- Header End -->
 
     <!-- Hero Section Start-->
-    <section id="home" class="pt-36 lg:px-10 dark:bg-dark">
+    <section id="home" class="lg:px-10 pb-24 lg:pb-16 dark:bg-dark">
         <div class="mx-auto">
             <div class="flex flex-wrap">
                 <div class="w-full justify-center px-4 lg:w-1/2 my-auto">
@@ -86,18 +91,21 @@
                     </h1>
                     <h2 class="font-medium text-secondary text-lg mb-3 lg:text-2xl">Fullstack Web Developer</h2>
                     <p class="font-normal leading-relaxed text-slate-400 mb-10 ">Penuhi hari-harimu di depan komputer
-                        dengan <span class="font-semibold text-dark">coding!</span></p>
+                        dengan <span class="font-semibold text-dark dark:text-white">coding!</span></p>
 
-                    <a href="#"
-                        class="font-semibold text-white bg-primary py-3 px-6 rounded-full hover:shadow-lg hover:opacity-85 transition duration-300 ease-in-out">Hubungi
+                    <a href="#contact"
+                        class="font-semibold text-white bg-primary py-3 px-4 rounded-full hover:shadow-lg hover:opacity-85 transition duration-300 ease-in-out dark:hover:shadow-slate-800">Hubungi
                         Saya</a>
+                    <a href="./pdf/CV_Rayhan Muhammad Alfarizi.pdf" target="_blank"
+                        class="ml-3 font-semibold text-white bg-primary py-3 px-4 rounded-full hover:shadow-lg hover:opacity-85 transition duration-300 ease-in-out dark:hover:shadow-slate-800">Download
+                        CV</a>
                 </div>
 
-                <div class="w-full self-end px-4 lg:w-1/2">
+                <div class="w-full self-end px-4 lg:w-1/2 -order-1 lg:order-0">
                     <div class="relative mt-10 lg:mt-0 lg:right-0">
-                        <img src="./img/Kemeja Hitam.png" alt="Rayhan Muhammad Alfarizi"
-                            class="max-w-full mx-auto scale-90 relative z-1">
-                        <span class="absolute bottom-0 -translate-y-1/10 left-1/2 -translate-x-1/2 md:scale-120">
+                        <img src="./img/my-photo/Kemeja Hitam.png" alt="Rayhan Muhammad Alfarizi"
+                            class="max-w-full mx-auto scale-70 relative z-1">
+                        <span class="absolute bottom-0 -translate-y-1/10 left-1/2 -translate-x-1/2 scale-90">
                             <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="oklch(0.704 0.14 182.503)"
                                     d="M43.8,-69.3C55.6,-60.4,63.5,-46.5,67.4,-32.4C71.4,-18.3,71.5,-4,71.6,11.8C71.7,27.7,71.9,45.1,63.2,54.4C54.5,63.8,37,65.1,22.6,62.8C8.2,60.6,-3.1,54.7,-15.5,51.6C-28,48.5,-41.7,48.3,-45.7,41.1C-49.7,33.9,-43.9,19.7,-46.8,6.1C-49.7,-7.4,-61.3,-20.3,-59,-27.6C-56.7,-34.8,-40.5,-36.3,-28.4,-45C-16.2,-53.7,-8.1,-69.6,3.9,-75.7C15.9,-81.8,31.9,-78.1,43.8,-69.3Z"
@@ -112,22 +120,26 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32 flex dark:bg-dark">
-        <div class="">
+    <section id="about" class="pt-46 pb-40 bg-white dark:bg-slate-800">
+        <h4 class="px-4 inline-block font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
+        <div class="flex">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-8 lg:w-1/2">
-                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
                     <h2 class="font-bold text-black text-3xl mb-4 max-w-xl lg:text-4xl lg:mb-5 dark:text-white">Yuk,
                         kenalan sama aku</h2>
-                    <p class="font-medium text-secondary max-w-xl lg:text-lg">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Libero nobis assumenda sed beatae ea harum at ullam officiis, ab corrupti
-                        quisquam eum obcaecati soluta explicabo!</p>
+                    <p class="font-medium text-secondary dark:text-slate-400 max-w-xl lg:text-lg mb-5">
+                        Saya adalah seorang pengembang aplikasi berbasis web yang siap membantu mewujudkan ide-ide Anda
+                        menjadi kenyataan!
+                    </p>
+                    <a href="./about.html"
+                        class="inline-block mx-auto font-semibold text-white bg-primary py-3 px-6 rounded-full hover:shadow-lg hover:opacity-85 transition duration-300 ease-in-out">Kenal
+                        Lebih Dekat</a>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-3 lg:text-3xl lg:pt-12 dark:text-white">Mari berteman
+                    <h3 class="font-semibold text-dark text-2xl mb-3 lg:text-3xl dark:text-white">Mari berteman
                     </h3>
-                    <p class="font-medium text-secondary mb-4 lg:text-lg">Lorem ipsum dolor sit, amet consectetur
-                        adipisicing elit. Accusamus aut nisi rem natus adipisci obcaecati cupiditate at. Labore.</p>
+                    <p class="font-medium text-secondary dark:text-slate-400 mb-4 lg:text-lg max-w-xl">Saya senang berkolaborasi dengan
+                        orang-orang hebat untuk menciptakan sesuatu yang luar biasa.</p>
                     <div class="flex">
                         <!-- Youtube -->
                         <a href="https://youtube.com" target="_blank"
@@ -180,14 +192,15 @@
     <!-- About Section End -->
 
     <!-- Portofolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-200 dark:bg-slate-800">
+    <section id="portfolio" class="pt-36 pb-32 bg-slate-200 dark:bg-dark">
         <div class="w-full px-4">
             <div class="text-center max-w-xl mx-auto mb-12">
-                <h4 class="text-primary font-semibold mb-2 xl:text-lg">Portfolio</h3>
-                    <h2 class="text-3xl font-extrabold mb-3 text-dark lg:text-5xl dark:text-white">Proyek Terbaru</h2>
-                    <p class="inline-block max-w-xl font-base text-secondary lg:text-md">Lorem ipsum dolor sit, amet
-                        consectetur adipisicing elit.
-                        Debitis assumenda soluta esse necessitatibus, temporibus blanditiis.</p>
+                <h4 class="text-primary font-semibold mb-2 xl:text-lg">Portfolio</h4>
+                <h2 class="text-3xl font-extrabold mb-3 text-dark lg:text-5xl dark:text-white">Proyek Terbaru</h2>
+                <p class="inline-block max-w-xl font-base text-secondary dark:text-slate-400 lg:text-md">Saya selalu memberikan solusi
+                    terbaik untuk setiap tantangan yang ada.
+                    <br>Berikut adalah beberapa proyek terbaru yang telah saya kerjakan.
+                </p>
             </div>
 
             <div class="w-full px-4 flex flex-wrap justify-center text-center">
@@ -195,10 +208,13 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="./img/Buku Tamu Desnet.png" alt="Manajemen Buku Tamu Desnet" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Manajemen Buku Tamu Desnet
+
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                        <a>
+                            Manajemen Buku Tamu Desnet</a>
                     </h3>
-                    <p class="font-medium text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Cumque, sed. Commodi tempore excepturi vero natus?</p>
+                    <p class="font-medium text-secondary dark:text-slate-400">Aplikasi ini dikembangkan untuk menjadwalkan dan memanajemen
+                        tamu secara efisien dan terorganisir di PT DES Teknologi Informasi.</p>
                     <div class="mt-2 flex gap-3 justify-center">
                         <a href="https://codeigniter.com" target="_blank"
                             class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
@@ -224,9 +240,12 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="./img/Form Buku Tamu.png" alt="Formulir Buku Tamu Desnet" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Formulir Buku Tamu Desnet</h3>
-                    <p class="font-medium text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Cumque, sed. Commodi tempore excepturi vero natus?</p>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                        <a>Formulir Buku Tamu
+                            Desnet</a>
+                    </h3>
+                    <p class="font-medium text-secondary dark:text-slate-400">Pengisian buku tamu pada formulir untuk tamu dengan aplikasi
+                        berbasis web di PT DES Teknologi Informasi</p>
                     <div class="mt-2 flex gap-3 justify-center">
                         <a href="https://codeigniter.com" target="_blank"
                             class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
@@ -261,9 +280,11 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="./img/Management Project.png" alt="Manajemen Pengguna" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Manajemen Pengguna</h3>
-                    <p class="font-medium text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Cumque, sed. Commodi tempore excepturi vero natus?</p>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                        <a href="https://github.com/Letsgobois24/auth-website" target="_blank">Manajemen Pengguna</a>
+                    </h3>
+                    <p class="font-medium text-secondary dark:text-slate-400">Projek aplikasi berbasis web guna memanajemen peran, menu, dan
+                        pengguna.</p>
                     <div class="mt-2 flex gap-3 justify-center">
                         <a href="https://codeigniter.com" target="_blank"
                             class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
@@ -289,9 +310,12 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="./img/Bike Sharing Report.png" alt="Laporan Penggunaan Sepeda" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Laporan Penggunaan Sepeda</h3>
-                    <p class="font-medium text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Cumque, sed. Commodi tempore excepturi vero natus?</p>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                        <a href="https://github.com/rymalfarizi/bike-sharing" target="_blank">Laporan Penggunaan
+                            Sepeda</a>
+                    </h3>
+                    <p class="font-medium text-secondary dark:text-slate-400">Laporan hasil analisis penggunaan sepeda yang ditampilkan pada
+                        website</p>
                     <div class="mt-2 flex gap-3 justify-center">
                         <a href="https://www.python.org/" target="_blank"
                             class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
@@ -324,9 +348,11 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="./img/To Do List.png" alt="To Do List" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">To Do List</h3>
-                    <p class="font-medium text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Cumque, sed. Commodi tempore excepturi vero natus?</p>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                        <a href="https://github.com/Letsgobois24/react-todo-list" target="_blank">To Do List</a>
+                    </h3>
+                    <p class="font-medium text-secondary dark:text-slate-400">Aplikasi frontend yang digunakan untuk mengelola daftar hal
+                        yang harus dikerjakan</p>
                     <div class="mt-2 flex gap-3 justify-center">
                         <a href="https://react.dev" target="_blank"
                             class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
@@ -346,7 +372,7 @@
     <!-- Portofolio Section End -->
 
     <!-- Clients Section Start -->
-    <section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
+    <!-- <section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
         <div class="w-full px-4">
             <div class="text-center mx-auto mb-8">
                 <h4 class="text-primary font-semibold mb-2 xl:text-lg">Clients</h3>
@@ -375,11 +401,11 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Clients Section End -->
 
     <!-- Blog Section Start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
+    <!-- <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
         <div class="w-full px-4">
             <div class="text-center max-w-xl mx-auto mb-12">
                 <h4 class="text-primary font-semibold mb-2 xl:text-lg">Blog</h3>
@@ -433,7 +459,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Blog Section End -->
 
     <!-- Contact Section Start -->
@@ -441,26 +467,38 @@
         <div class="w-full px-4">
             <div class="text-center max-w-xl mx-auto mb-12">
                 <h4 class="text-primary font-semibold mb-2 xl:text-lg">Contact</h3>
-                    <h2 class="text-3xl font-extrabold mb-3 text-dark lg:text-5xl dark:text-white">Hubung Kami</h2>
-                    <p class="inline-block max-w-xl font-base text-secondary lg:text-md">Lorem ipsum dolor, sit amet
-                        consectetur adipisicing elit. Minima, a.</p>
+                    <h2 class="text-3xl font-extrabold mb-3 text-dark lg:text-5xl dark:text-white">Hubungi Kami</h2>
+                    <p class="inline-block max-w-xl font-base text-secondary dark:text-slate-400 lg:text-md">Apabila Anda memiliki
+                        pertanyaan, saran, atau ingin bekerja sama, jangan ragu untuk menghubungi kami melalui formulir
+                        di bawah ini!</p>
             </div>
         </div>
-        <form action="" class="w-full max-w-4xl mx-auto">
-            <div class="w-full px-4 mb-8">
+        <form id="contact-form" action="" class="w-full max-w-4xl mx-auto">
+            <div class="w-full px-4 mb-10">
                 <label for="name" class="text-primary">Nama</label>
-                <input type="text" id="name"
-                    class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+                <div class="relative">
+                    <input type="text" id="name" name="name"
+                        class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+                    <span class="hidden absolute -bottom-5 left-0 text-red-500 text-sm">Tolong, isikan nama Anda!</span>
+                </div>
             </div>
-            <div class="w-full px-4 mb-8">
+            <div class="w-full px-4 mb-10">
                 <label for="email" class="text-primary">Email</label>
-                <input type="email" id="email"
-                    class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+                <div class="relative">
+                    <input type="text" id="email" name="email"
+                        class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+                    <span class="hidden absolute -bottom-5 left-0 text-red-500 text-sm">Tolong, isikan email
+                        Anda!</span>
+                </div>
             </div>
-            <div class="w-full px-4 mb-8">
+            <div class="w-full px-4 mb-10">
                 <label for="message" class="text-primary">Message</label>
-                <textarea type="text" id="message"
-                    class="h-32 w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"></textarea>
+                <div class="relative">
+                    <textarea type="text" id="message" name="message"
+                        class="h-32 w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"></textarea>
+                    <span class="hidden absolute -bottom-4 left-0 text-red-500 text-sm">Tolong, isikan pesan yang ingan
+                        Anda sampaikan!</span>
+                </div>
             </div>
             <div class="w-full px-4">
                 <button type="submit"
@@ -475,41 +513,49 @@
         <div class="flex flex-wrap">
             <div class="w-full px-4 mb-12 text-secondary font-medium md:w-1/3">
                 <h2 class="font-bold text-4xl text-slate-100 mb-5">Letsgobois</h2>
-                <h3 class="font-bold text-xl mb-2">Hubungi Kami</h3>
+                <h3 class="font-bold text-xl mb-2 text-slate-400">Hubungi Kami</h3>
                 <p>rayhanmlfarizi@gmail.com</p>
                 <p>Salatiga</p>
             </div>
+
             <div class="w-full px-4 mb-12 md:w-1/3">
-                <h3 class="font-semibold text-xl text-slate-100 mb-4">Kategori Tulisan</h3>
+                <h3 class="font-semibold text-xl text-slate-100 mb-2.5">Tautan Utama</h3>
                 <ul class="text-secondary">
-                    <li class="mb-3">
-                        <a href="#" class="hover:text-primary">Lorem.</a>
+                    <li>
+                        <a href="#home" class="hover:text-primary inline-block py-1.5">Beranda</a>
                     </li>
-                    <li class="mb-3">
-                        <a href="#" class="hover:text-primary">Ipsum.</a>
+                    <li>
+                        <a href="#about" class="hover:text-primary inline-block py-1.5">Tentang Saya</a>
                     </li>
-                    <li class="mb-3">
-                        <a href="#" class="hover:text-primary">DolorSit.</a>
+                    <li>
+                        <a href="#portofolio" class="hover:text-primary inline-block py-1.5">Portofolio</a>
+                    </li>
+                    <li>
+                        <a href="#blog" class="hover:text-primary inline-block py-1.5">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-primary inline-block py-1.5">Contact</a>
                     </li>
                 </ul>
             </div>
+
             <div class="w-full px-4 mb-12 md:w-1/3">
-                <h3 class="font-semibold text-xl text-slate-100 mb-4">Tautan</h3>
+                <h3 class="font-semibold text-xl text-slate-100 mb-2.5">Tentang Saya</h3>
                 <ul class="text-secondary">
-                    <li class="mb-3">
-                        <a href="#home" class="hover:text-primary">Beranda</a>
+                    <li>
+                        <a href="about.html#siapa" class="hover:text-primary inline-block py-1.5">Siapa Aku</a>
                     </li>
-                    <li class="mb-3">
-                        <a href="#about" class="hover:text-primary">Tentang Saya</a>
+                    <li>
+                        <a href="about.html#passion" class="hover:text-primary inline-block py-1.5">Passion</a>
                     </li>
-                    <li class="mb-3">
-                        <a href="#portofolio" class="hover:text-primary">Portofolio</a>
+                    <li>
+                        <a href="about.html#penguasaan" class="hover:text-primary inline-block py-1.5">Penguasaan</a>
                     </li>
-                    <li class="mb-3">
-                        <a href="#blog" class="hover:text-primary">Blog</a>
+                    <li>
+                        <a href="about.html#pengalaman" class="hover:text-primary inline-block py-1.5">Pengalaman</a>
                     </li>
-                    <li class="mb-3">
-                        <a href="#contact" class="hover:text-primary">Contact</a>
+                    <li>
+                        <a href="about.html#quote" class="hover:text-primary inline-block py-1.5">Pengalaman</a>
                     </li>
                 </ul>
             </div>
@@ -570,7 +616,176 @@
     </a>
     <!-- Back to top End -->
 
+    <!-- Modal -->
+    <div id="submission"
+        class="hidden flex fixed justify-center items-center top-0 left-0 w-screen h-screen bg-[rgba(100,116,139,0.5)] z-99">
+        <div id="modal" class="bg-white z-100 rounded-lg shadow-lg dark:text-white dark:bg-dark">
+            <!-- Mulai Validasi Pengiriman Pesan -->
+            <div id="validation" class="">
+                <div class="flex justify-between py-4 pl-6 pr-4 border-b border-b-slate-500 dark:border-b-slate-400">
+                    <span class="text-lg font-semibold">Pengiriman Pesan</span>
+
+                    <button
+                        class="close-button w-6 h-6 flex justify-center items-center rounded-full border text-slate-400 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700">
+                        <span class="text-lg inline-block pointer-events-none select-none">&times;</span>
+                    </button>
+
+                </div>
+                <p class="inline-block py-8 px-6 text-secondary">Apakah Anda yakin ingin mengirimkan pesan ini?</p>
+                <div
+                    class="flex justify-end py-4 gap-4 px-6 border-t border-t-slate-200 dark:border-t-slate-600 text-white">
+                    <button
+                        class="close-button px-3 py-1 bg-red-400 rounded-md cursor-pointer hover:bg-red-500">Batal</button>
+                    <button id="submit-button" class="px-3 py-1 bg-sky-500 rounded-md cursor-pointer hover:bg-sky-600"
+                        type="submit">Kirim</button>
+                </div>
+            </div>
+            <!-- Akhir Validasi Pengiriman Pesan -->
+
+            <!-- Loading Gif -->
+            <div id="loading" class="hidden flex justify-center items-center min-w-96 min-h-70">
+                <img src="./img/icons/Loading.gif" class="w-16 h-16" alt="">
+            </div>
+
+            <!-- Modal Keberhasilan Pengiriman Mulai -->
+            <div id="succession" class="hidden flex flex-col min-w-96 min-h-70 items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" class="hidden text-green-600"
+                    viewBox="0 0 16 16">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5">
+                        <path
+                            d="M14.25 8.75c-.5 2.5-2.385 4.854-5.03 5.38A6.25 6.25 0 0 1 3.373 3.798C5.187 1.8 8.25 1.25 10.75 2.25" />
+                        <path d="m5.75 7.75l2.5 2.5l6-6.5" />
+                    </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" class="hidden text-red-600"
+                    viewBox="0 0 16 16">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5">
+                        <path d="m10.25 5.75l-4.5 4.5m0-4.5l4.5 4.5" />
+                        <circle cx="8" cy="8" r="6.25" />
+                    </g>
+                </svg>
+                <h4 class="py-2 text-lg font-semibold"></h4>
+                <p class="pb-4 text-secondary"></p>
+                <button
+                    class="close-button px-5 py-1 bg-sky-500 rounded-lg cursor-pointer hover:bg-sky-600 text-white">Close
+                </button>
+            </div>
+            <!-- Modal Keberhasilan Pengiriman Akhir -->
+        </div>
+    </div>
+
     <script src="./js/script.js"></script>
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const inputForm = contactForm.querySelectorAll('input, textarea');
+        const validationMessage = contactForm.getElementsByTagName('span');
+
+        const submission = document.getElementById('submission');
+
+        const validationModal = submission.querySelector('#validation');
+        const submitButton = validationModal.querySelector('#submit-button');
+        const successionModal = submission.querySelector('#succession');
+
+        const closeButton = submission.querySelectorAll('.close-button');
+        closeButton.forEach(button => {
+            button.addEventListener('click', function () {
+                submission.classList.add('hidden');
+            });
+        });
+
+        const loadingGif = submission.querySelector('#loading');
+        const successionIcon = successionModal.getElementsByTagName('svg');
+        const messageSuccession = successionModal.querySelector('h4');
+        const informationSuccession = successionModal.querySelector('p');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Cek jika input kosong
+            for (let index = 0; index < inputForm.length; index++) {
+                if (inputForm[index].value.trim() == '') {
+                    validationMessage[index].classList.remove('hidden');
+                    return
+                } else validationMessage[index].classList.add('hidden');
+
+                // Cek kevalidan email
+                if (index == 1) {
+                    if (!isValidEmail(inputForm[1].value)) {
+                        validationMessage[1].classList.remove('hidden');
+                        validationMessage[1].textContent = 'Email tidak valid';
+                        return
+                    } else validationMessage[1].textContent = 'Tolong, isikan email Anda!'
+                }
+            }
+
+
+
+
+            // Show Modal
+            submission.classList.remove('hidden');
+            validationModal.classList.remove('hidden')
+            successionModal.classList.add('hidden');
+
+            // Post Form
+            submitButton.addEventListener('click', function () {
+                validationModal.classList.add('hidden');
+                loadingGif.classList.remove('hidden');
+
+                fetch("http://localhost:8080/apicontact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: inputForm[0].value || "",
+                        email: inputForm[1].value || "",
+                        message: inputForm[2].value || ""
+                    })
+                })
+                    .then(response => response.json())
+                    .then(response => {
+
+                        if (response.status == 400) {
+                            errorMessage();
+                            firstKey = Object.keys(response.messages)[0]
+                            informationSuccession.textContent = response.messages[firstKey];
+                        } else if (response.status == 429) {
+                            console.log(response)
+                        } else {
+                            inputForm[2].value = '';  // mengosongkan message
+                            messageSuccession.textContent = 'Pesan Anda telah terkirim';
+                            informationSuccession.textContent = response.messages;
+                            successionIcon[0].classList.remove('hidden');
+                            successionIcon[1].classList.add('hidden');
+                        }
+
+                    })
+                    .catch(() => {
+                        errorMessage();
+                        informationSuccession.textContent = 'Terdapat kesalahan pada pengiriman data';
+                    })
+                    .finally(() => {
+                        successionModal.classList.remove('hidden');
+                        loadingGif.classList.add('hidden');
+                    })
+            });
+
+        })
+
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function errorMessage() {
+            messageSuccession.textContent = 'Pesan Anda gagal terkirim';
+            successionIcon[0].classList.add('hidden');
+            successionIcon[1].classList.remove('hidden');
+        }
+
+    </script>
 </body>
 
 </html>
