@@ -27,6 +27,7 @@ contactForm.addEventListener('submit', function (e) {
     for (let index = 0; index < inputForm.length; index++) {
         if (inputForm[index].value.trim() == '') {
             validationMessage[index].classList.remove('hidden');
+            scrollIntoView(validationMessage[index]);
             return
         } else validationMessage[index].classList.add('hidden');
 
@@ -36,12 +37,12 @@ contactForm.addEventListener('submit', function (e) {
                 validationMessage[1].classList.remove('hidden');
                 validationMessage[1].textContent = 'Email tidak valid';
                 return
-            } else validationMessage[1].textContent = 'Tolong, isikan email Anda!'
+            } else {
+                validationMessage[1].textContent = 'Tolong, isikan email Anda!';
+                scrollIntoView(validationMessage[1]);
+            }
         }
     }
-
-
-
 
     // Show Modal
     submission.classList.remove('hidden');
@@ -93,6 +94,13 @@ contactForm.addEventListener('submit', function (e) {
     });
 
 })
+
+function scrollIntoView(tag){
+    const yOffset = -250;
+    const y = tag.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    
+    window.scrollTo({top: y, behavior: 'smooth'});
+}
 
 function isValidEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

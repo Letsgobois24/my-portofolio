@@ -483,6 +483,9 @@
   .min-w-96 {
     min-width: calc(var(--spacing) * 96);
   }
+  .min-w-full {
+    min-width: 100%;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -600,6 +603,15 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-scroll {
+    overflow: scroll;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .overflow-x-scroll {
+    overflow-x: scroll;
   }
   .\!scroll-smooth {
     scroll-behavior: smooth !important;
