@@ -20,7 +20,7 @@ const successionIcon = successionModal.getElementsByTagName('svg');
 const messageSuccession = successionModal.querySelector('h4');
 const informationSuccession = successionModal.querySelector('p');
 
-contactForm.addEventListener('submit', function (e) {
+contactForm.querySelector('button').addEventListener('click', function (e) {
     e.preventDefault();
 
     // Cek jika input kosong
@@ -37,7 +37,7 @@ contactForm.addEventListener('submit', function (e) {
                 validationMessage[1].classList.remove('hidden');
                 validationMessage[1].textContent = 'Email tidak valid';
                 return
-            } else {
+            } else if ((inputForm[1].value.trim() == '')) {
                 validationMessage[1].textContent = 'Tolong, isikan email Anda!';
                 scrollIntoView(validationMessage[1]);
             }
@@ -54,7 +54,7 @@ contactForm.addEventListener('submit', function (e) {
         validationModal.classList.add('hidden');
         loadingGif.classList.remove('hidden');
 
-        fetch("http://localhost:8080/apicontact", {
+        fetch("https://rymalfarizi.rf.gd/apicontact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -67,7 +67,7 @@ contactForm.addEventListener('submit', function (e) {
         })
             .then(response => response.json())
             .then(response => {
-
+                console.log(response)
                 if (response.status == 400) {
                     errorMessage();
                     firstKey = Object.keys(response.messages)[0]
