@@ -48,58 +48,57 @@ contactForm.querySelector('button').addEventListener('click', function (e) {
     submission.classList.remove('hidden');
     validationModal.classList.remove('hidden')
     successionModal.classList.add('hidden');
-
-    // Post Form
-    submitButton.addEventListener('click', function () {
-        validationModal.classList.add('hidden');
-        loadingGif.classList.remove('hidden');
-
-        fetch("https://rymalfarizi.rf.gd/apicontact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: inputForm[0].value || "",
-                email: inputForm[1].value || "",
-                message: inputForm[2].value || ""
-            })
-        })
-            .then(response => response.json())
-            .then(response => {
-                console.log(response)
-                if (response.status == 400) {
-                    errorMessage();
-                    firstKey = Object.keys(response.messages)[0]
-                    informationSuccession.textContent = response.messages[firstKey];
-                } else if (response.status == 429) {
-                    console.log(response)
-                } else {
-                    inputForm[2].value = '';  // mengosongkan message
-                    messageSuccession.textContent = 'Pesan Anda telah terkirim';
-                    informationSuccession.textContent = response.messages;
-                    successionIcon[0].classList.remove('hidden');
-                    successionIcon[1].classList.add('hidden');
-                }
-
-            })
-            .catch(() => {
-                errorMessage();
-                informationSuccession.textContent = 'Terdapat kesalahan pada pengiriman data';
-            })
-            .finally(() => {
-                successionModal.classList.remove('hidden');
-                loadingGif.classList.add('hidden');
-            })
-    });
-
 })
 
-function scrollIntoView(tag){
+// Post Form
+submitButton.addEventListener('click', function () {
+    validationModal.classList.add('hidden');
+    loadingGif.classList.remove('hidden');
+
+    fetch("https://rymalfarizi.rf.gd/apicontact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: inputForm[0].value || "",
+            email: inputForm[1].value || "",
+            message: inputForm[2].value || ""
+        })
+    })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            if (response.status == 400) {
+                errorMessage();
+                firstKey = Object.keys(response.messages)[0]
+                informationSuccession.textContent = response.messages[firstKey];
+            } else if (response.status == 429) {
+                console.log(response)
+            } else {
+                inputForm[2].value = '';  // mengosongkan message
+                messageSuccession.textContent = 'Pesan Anda telah terkirim';
+                informationSuccession.textContent = response.messages;
+                successionIcon[0].classList.remove('hidden');
+                successionIcon[1].classList.add('hidden');
+            }
+
+        })
+        .catch(() => {
+            errorMessage();
+            informationSuccession.textContent = 'Terdapat kesalahan pada pengiriman data';
+        })
+        .finally(() => {
+            successionModal.classList.remove('hidden');
+            loadingGif.classList.add('hidden');
+        })
+});
+
+function scrollIntoView(tag) {
     const yOffset = -250;
     const y = tag.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    
-    window.scrollTo({top: y, behavior: 'smooth'});
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
 }
 
 function isValidEmail(email) {
