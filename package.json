@@ -1,8 +1,13 @@
 {
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/style.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/minify.css --minify && webpack"
   },
   "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.7",
@@ -11,5 +16,21 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.7"
-  }
+  },
+  "name": "my-portofolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Letsgobois24/my-portofolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Letsgobois24/my-portofolio/issues"
+  },
+  "homepage": "https://github.com/Letsgobois24/my-portofolio#readme"
 }

@@ -1,3 +1,6 @@
+// Import CSS
+import '../css/minify.css';
+
 // Dark Toogle
 darkToggle = document.getElementById('dark-toggle');
 html = document.querySelector('html');
