@@ -15,7 +15,7 @@ export default {
     indexScript: './src/js/indexScript.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'src/js/[name].[contenthash].js',
     assetModuleFilename: '[path]/[name]-[hash][ext]',
     clean: true
