@@ -1,5 +1,7 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 // Import CSS
-import '../css/minify.css';
+
 
 // Dark Toogle
 const darkToggle = document.getElementById('dark-toggle');
@@ -57,3 +59,5 @@ window.addEventListener('click', function (e) {
         navMenu.classList.add('hidden');
     }
 });
+/******/ })()
+;
