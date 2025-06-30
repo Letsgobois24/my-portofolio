@@ -1,13 +1,13 @@
 // Import CSS
-import '../css/minify.css';
+import '../css/style.css';
 
 // Dark Toogle
 const darkToggle = document.getElementById('dark-toggle');
 const html = document.querySelector('html');
 const buttonDarkToggle = darkToggle.firstElementChild;
+const toTop = document.getElementById('to-top');
 
 darkToggle.addEventListener('click', function () {
-    console.log('Halo');
     if (html.classList.contains('dark')){
         html.classList.remove('dark');
         buttonDarkToggle.classList.remove('translate-x-4');
@@ -23,11 +23,16 @@ if (html.classList.contains('dark')){
     buttonDarkToggle.classList.add('translate-x-4');
 }
 
+// Hidden toTop after clicking
+toTop.addEventListener('click', function(){
+    this.classList.add('hidden');
+    this.classList.remove('flex');
+})
+
 // Navbar Fixed
 window.onscroll = function () {
     const header = document.querySelector('header');
     const fixedNav = header.offsetTop;
-    const toTop = document.getElementById('to-top');
 
     if (window.pageYOffset > fixedNav) {
         header.classList.add('navbar-fixed');
@@ -50,7 +55,6 @@ hamburger.addEventListener('click', function () {
 })
 
 // Klik di luar hamburger
-
 window.addEventListener('click', function (e) {
     if (e.target != hamburger && e.target != navMenu) {
         hamburger.classList.remove('hamburger-active');

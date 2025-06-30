@@ -41,7 +41,7 @@ export default {
     chunks: ['script']
   }),
   new MiniCssExtractPlugin({
-    filename: 'src/css/main.[contenthash].css'
+    filename: 'src/css/style.[contenthash].css'
   }),
   new CopyPlugin({
       patterns: [

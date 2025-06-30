@@ -36,6 +36,7 @@ contactForm.querySelector('button').addEventListener('click', function (e) {
             if (!isValidEmail(inputForm[1].value)) {
                 validationMessage[1].classList.remove('hidden');
                 validationMessage[1].textContent = 'Email tidak valid';
+                scrollIntoView(validationMessage[1]);
                 return
             } else if ((inputForm[1].value.trim() == '')) {
                 validationMessage[1].textContent = 'Tolong, isikan email Anda!';
@@ -50,50 +51,6 @@ contactForm.querySelector('button').addEventListener('click', function (e) {
     successionModal.classList.add('hidden');
 })
 
-// Post Form
-submitButton.addEventListener('click', function () {
-    validationModal.classList.add('hidden');
-    loadingGif.classList.remove('hidden');
-
-    fetch("https://rymalfarizi.rf.gd/apicontact", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: inputForm[0].value || "",
-            email: inputForm[1].value || "",
-            message: inputForm[2].value || ""
-        })
-    })
-        .then(response => response.json())
-        .then(response => {
-            console.log(response)
-            if (response.status == 400) {
-                errorMessage();
-                firstKey = Object.keys(response.messages)[0]
-                informationSuccession.textContent = response.messages[firstKey];
-            } else if (response.status == 429) {
-                console.log(response)
-            } else {
-                inputForm[2].value = '';  // mengosongkan message
-                messageSuccession.textContent = 'Pesan Anda telah terkirim';
-                informationSuccession.textContent = response.messages;
-                successionIcon[0].classList.remove('hidden');
-                successionIcon[1].classList.add('hidden');
-            }
-
-        })
-        .catch(() => {
-            errorMessage();
-            informationSuccession.textContent = 'Terdapat kesalahan pada pengiriman data';
-        })
-        .finally(() => {
-            successionModal.classList.remove('hidden');
-            loadingGif.classList.add('hidden');
-        })
-});
-
 function scrollIntoView(tag) {
     const yOffset = -250;
     const y = tag.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -106,8 +63,68 @@ function isValidEmail(email) {
     return regex.test(email);
 }
 
-function errorMessage() {
+// Import Firestore Module
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, Timestamp } from "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: "IzaSyBiLRIhF20eUP4GpMsQlT5WV5cmasScAFY",
+    authDomain: "myportofolio-65aed.firebaseapp.com",
+    projectId: "myportofolio-65aed",
+    storageBucket: "myportofolio-65aed.firebasestorage.app",
+    messagingSenderId: "234953842468",
+    appId: "1:234953842468:web:893cca114458d487141db1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+
+// Post Data to Firestore
+async function setNewData(event) {
+    event.preventDefault();
+
+    showModal();
+
+    const ref = collection(db, "MessagesList")
+    const now = new Date();
+    const timestamp = Timestamp.fromDate(now);
+
+    await addDoc(
+        ref, {
+        Name: inputForm[0].value,
+        Email: inputForm[1].value,
+        Message: inputForm[2].value,
+        CreatedAt : timestamp
+    })
+        .then(() => successMessage())
+        .catch((error) => errorMessage(error))
+        .finally(() => finallyMessage())
+}
+
+
+const showModal = () => {
+    validationModal.classList.add('hidden');
+    loadingGif.classList.remove('hidden');
+}
+
+const errorMessage = (error) => {
     messageSuccession.textContent = 'Pesan Anda gagal terkirim';
+    informationSuccession.textContent = error;
     successionIcon[0].classList.add('hidden');
     successionIcon[1].classList.remove('hidden');
 }
+
+const successMessage = () => {
+    inputForm[2].value = '';
+    messageSuccession.textContent = 'Pesan Anda telah terkirim';
+    informationSuccession.textContent = "Terimakasih telah menghubungi kami!";
+    successionIcon[0].classList.remove('hidden');
+    successionIcon[1].classList.add('hidden');
+}
+
+const finallyMessage = () => {
+    successionModal.classList.remove('hidden');
+    loadingGif.classList.add('hidden');
+}
+
+submitButton.addEventListener('click', setNewData);
