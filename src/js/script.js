@@ -52,6 +52,7 @@ const navMenu = document.getElementById('nav-menu');
 hamburger.addEventListener('click', function () {
     hamburger.classList.toggle('hamburger-active');
     navMenu.classList.toggle('hidden');
+    console.log('ok');
 })
 
 // Klik di luar hamburger
