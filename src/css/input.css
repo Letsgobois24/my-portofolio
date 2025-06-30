@@ -20,7 +20,7 @@ body {
 }
 
 section, footer {
-    @apply px-8 md:px-20 xl:px-18
+    @apply px-4 md:px-20 xl:px-18
 }
 
 .navbar-fixed {
