@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/style.css --watch",
+    "dev": "webpack --watch",
     "build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/minify.css --minify && webpack"
   },
   "devDependencies": {
