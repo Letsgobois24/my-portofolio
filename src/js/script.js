@@ -23,16 +23,15 @@ if (html.classList.contains('dark')){
     buttonDarkToggle.classList.add('translate-x-4');
 }
 
-// Hidden toTop after clicking
-toTop.addEventListener('click', function(){
-    this.classList.add('hidden');
-    this.classList.remove('flex');
-})
+
+let isScrollingToTop = false;
 
 // Navbar Fixed
 window.onscroll = function () {
     const header = document.querySelector('header');
     const fixedNav = header.offsetTop;
+
+    if (isScrollingToTop) return;
 
     if (window.pageYOffset > fixedNav) {
         header.classList.add('navbar-fixed');
@@ -44,6 +43,21 @@ window.onscroll = function () {
         toTop.classList.add('hidden');
     }
 }
+
+// Hidden toTop after clicking
+toTop.addEventListener('click', function () {
+    isScrollingToTop = true;
+    toTop.classList.add('hidden');
+    toTop.classList.remove('flex');
+
+    // Tunggu hingga scroll selesai
+    const checkIfAtTop = setInterval(() => {
+        if (window.pageYOffset === 0) {
+            isScrollingToTop = false;
+            clearInterval(checkIfAtTop);
+        }
+    }, 100);
+});
 
 // Hamburger Menu
 const hamburger = document.getElementById('hamburger');
